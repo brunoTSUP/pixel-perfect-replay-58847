@@ -12,7 +12,7 @@ export type ContactResult =
 
 /** URL base da API Rails (ex.: https://api.hotelmoreno.com.br). Envia para POST {base}/api/contact. */
 export function getContactApiUrl(): string | null {
-  const base = import.meta.env.VITE_CONTACT_API_URL as string | undefined;
+  const base = import.meta.env["VITE_CONTACT_API_URL"] as string | undefined;
   if (!base || !base.trim()) return null;
   return `${base.replace(/\/+$/, "")}/api/contact`;
 }

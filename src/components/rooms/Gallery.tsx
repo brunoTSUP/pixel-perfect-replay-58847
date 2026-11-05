@@ -87,13 +87,13 @@ export function Gallery({ photos }: { photos: Photo[] }) {
           </button>
           <figure className="max-h-full max-w-5xl" onClick={(e) => e.stopPropagation()}>
             <img
-              key={photos[index].src}
-              src={photos[index].src}
-              alt={photos[index].alt}
+              key={photos[index]!.src}
+              src={photos[index]!.src}
+              alt={photos[index]!.alt}
               className="animate-in fade-in max-h-[80vh] w-auto rounded-md object-contain"
             />
             <figcaption className="mt-3 text-center text-sm text-graphite-foreground/80">
-              {photos[index].alt} · {index + 1}/{photos.length}
+              {photos[index]!.alt} · {index + 1}/{photos.length}
             </figcaption>
           </figure>
           <button
