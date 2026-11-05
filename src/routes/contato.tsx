@@ -209,8 +209,8 @@ function Field({
   children,
 }: {
   label: string;
-  required?: boolean;
-  error?: string;
+  required?: boolean | undefined;
+  error?: string | undefined;
   id?: string;
   className?: string;
   children: React.ReactNode;
@@ -236,7 +236,7 @@ function MapSection() {
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    const io = new IntersectionObserver(([e]) => e.isIntersecting && (setShow(true), io.disconnect()), {
+    const io = new IntersectionObserver(([e]) => e?.isIntersecting && (setShow(true), io.disconnect()), {
       rootMargin: "200px",
     });
     io.observe(el);
