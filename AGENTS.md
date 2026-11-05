@@ -28,3 +28,6 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+- Site is static/institutional: no Lovable Cloud; contact form posts to an external API via `src/lib/contact-api.ts` using `VITE_CONTACT_API_URL` (shows WhatsApp fallback when unset) — owner's Rails backend will handle email.
+- Hotel facts and photo list live in `src/lib/site.ts`; photos are CDN asset pointers in `src/assets/images/`.
