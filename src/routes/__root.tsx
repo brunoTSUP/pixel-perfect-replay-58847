@@ -32,9 +32,9 @@ const HOTEL_SCHEMA = {
     addressCountry: "BR",
   },
   amenityFeature: [
+    "Café da manhã",
     "Wi-Fi",
     "Estacionamento",
-    "Café da manhã",
     "Fechaduras eletrônicas",
     "Ar-condicionado",
     "Televisão",
@@ -49,9 +49,7 @@ function NotFoundComponent() {
       <div className="max-w-md text-center">
         <h1 className="text-7xl font-bold text-foreground">404</h1>
         <h2 className="mt-4 text-xl font-semibold text-foreground">Página não encontrada</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          A página que você procura não existe ou foi movida.
-        </p>
+        <p className="mt-2 text-sm text-muted-foreground">A página que você procura não existe ou foi movida.</p>
         <div className="mt-6">
           <Link
             to="/"
@@ -75,9 +73,7 @@ function ErrorComponent({ error, reset }: ErrorComponentProps) {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <h1 className="text-xl font-semibold tracking-tight text-foreground">
-          This page didn't load
-        </h1>
+        <h1 className="text-xl font-semibold tracking-tight text-foreground">This page didn't load</h1>
         <p className="mt-2 text-sm text-muted-foreground">
           Something went wrong on our end. You can try refreshing or head back home.
         </p>
@@ -109,7 +105,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Hotel Moreno | Itajobi - SP" },
-      { name: "description", content: "Hotel Moreno em Itajobi - SP: 31 quartos, Wi-Fi, estacionamento e café da manhã." },
+      {
+        name: "description",
+        content: "Hotel Moreno em Itajobi - SP: 31 quartos, Wi-Fi, estacionamento e café da manhã.",
+      },
       { property: "og:site_name", content: "Hotel Moreno" },
       { property: "og:locale", content: "pt_BR" },
       { name: "theme-color", content: "#252A2E" },
@@ -155,7 +154,10 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <a href="#conteudo" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[70] focus:rounded-md focus:bg-surface focus:px-4 focus:py-2">
+      <a
+        href="#conteudo"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[70] focus:rounded-md focus:bg-surface focus:px-4 focus:py-2"
+      >
         Pular para o conteúdo
       </a>
       <Header />

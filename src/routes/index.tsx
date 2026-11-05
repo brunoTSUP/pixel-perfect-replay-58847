@@ -34,7 +34,11 @@ const FEATURES = [
 
 const FEATURED = [
   { photo: PHOTOS.quartoJanela, title: "Ambientes confortáveis", text: "Espaços organizados para o seu descanso." },
-  { photo: PHOTOS.quartoTv, title: "Praticidade no dia a dia", text: "Comodidades que tornam sua estadia mais agradável." },
+  {
+    photo: PHOTOS.quartoTv,
+    title: "Praticidade no dia a dia",
+    text: "Comodidades que tornam sua estadia mais agradável.",
+  },
   { photo: PHOTOS.pia, title: "Atenção aos detalhes", text: "Ambientes planejados para receber você." },
 ];
 
@@ -53,11 +57,15 @@ function Home() {
             Conforto, tranquilidade e hospitalidade em Itajobi, São Paulo.
           </p>
           <div className="mt-10 flex w-full flex-col gap-3 animate-in fade-in slide-in-from-bottom-4 duration-1000 sm:w-auto sm:flex-row">
-            <Link to="/contato" className={btn()}>Consultar disponibilidade</Link>
-            <Link to="/quartos" className={btn({ variant: "outline" })}>Conhecer quartos</Link>
+            <Link to="/contato" className={btn()}>
+              Consultar disponibilidade
+            </Link>
+            <Link to="/quartos" className={btn({ variant: "outline" })}>
+              Conhecer quartos
+            </Link>
           </div>
           <p className="mt-10 text-xs tracking-[0.25em] text-muted-foreground uppercase">
-            Wi-Fi · Estacionamento · Café da manhã
+            Café da manhã · Wi-Fi · Estacionamento ·
           </p>
         </div>
       </section>
