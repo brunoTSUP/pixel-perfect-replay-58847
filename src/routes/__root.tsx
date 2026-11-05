@@ -25,10 +25,10 @@ const HOTEL_SCHEMA = {
   numberOfRooms: 31,
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Avenida Catanduva, 223 - Jardim Ferreira",
+    streetAddress: "Av. Catanduva, 223",
     addressLocality: "Itajobi",
     addressRegion: "SP",
-    postalCode: "15840-000",
+    postalCode: "15841-110",
     addressCountry: "BR",
   },
   amenityFeature: [

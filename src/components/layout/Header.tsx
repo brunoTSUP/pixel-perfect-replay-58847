@@ -14,7 +14,8 @@ export function Header() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const overHero = pathname === "/" && !scrolled && !open;
+  const overHero = false;
+  void scrolled;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
