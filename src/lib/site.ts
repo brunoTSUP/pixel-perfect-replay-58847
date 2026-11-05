@@ -1,13 +1,3 @@
-import fachada from "@/assets/images/fachada.webp.asset.json";
-import quartoCasalSolteiro from "@/assets/images/quarto-casal-solteiro.webp.asset.json";
-import quartoJanela from "@/assets/images/quarto-janela.webp.asset.json";
-import quartoBranco from "@/assets/images/quarto-branco.webp.asset.json";
-import quartoTv from "@/assets/images/quarto-tv-frigobar.webp.asset.json";
-import banheiro from "@/assets/images/banheiro.webp.asset.json";
-import quartoBanheiro from "@/assets/images/quarto-banheiro.webp.asset.json";
-import varanda from "@/assets/images/varanda.webp.asset.json";
-import pia from "@/assets/images/pia-espelho.webp.asset.json";
-
 export const HOTEL = {
   name: "Hotel Moreno",
   fullAddress: "Av. Catanduva, 223 - Itajobi, SP, 15841-110",
@@ -29,64 +19,69 @@ export const HOTEL = {
 export type Photo = { src: string; alt: string; w: number; h: number };
 
 export const PHOTOS = {
-  fachada: { src: fachada.url, alt: "Fachada moderna do Hotel Moreno em Itajobi", w: 375, h: 625 },
+  hero: {
+    src: "/images/Mulher Sorridente com Laptop na Cama.png",
+    alt: "Mulher sorridente usando um laptop enquanto relaxa na cama",
+    w: 1536,
+    h: 1024,
+  },
+  fachada: { src: "/images/fachada.jpeg", alt: "Fachada moderna do Hotel Moreno em Itajobi", w: 375, h: 625 },
   quartoCasalSolteiro: {
-    src: quartoCasalSolteiro.url,
+    src: "/images/quarto-casal-solteiro.jpeg",
     alt: "Quarto com cama de casal e cama de solteiro, manta vermelha e painel amadeirado",
-    w: 1200,
-    h: 1600,
+    w: 1600,
+    h: 1200,
   },
   quartoJanela: {
-    src: quartoJanela.url,
+    src: "/images/quarto-janela.jpeg",
     alt: "Quarto iluminado com cama de casal, cama de solteiro e janela para a varanda",
     w: 1600,
     h: 1200,
   },
   quartoBranco: {
-    src: quartoBranco.url,
+    src: "/images/quarto-branco.jpeg",
     alt: "Quarto com roupas de cama brancas e quadro decorativo de cavalos",
     w: 1600,
     h: 1200,
   },
   quartoTv: {
-    src: quartoTv.url,
+    src: "/images/quarto-tv-frigobar.jpeg",
     alt: "Quarto com televisão, bancada de trabalho, frigobar e ar-condicionado",
-    w: 1600,
-    h: 1200,
+    w: 1448,
+    h: 1086,
   },
   banheiro: {
-    src: banheiro.url,
+    src: "/images/banheiro.jpeg",
     alt: "Banheiro privativo com box de vidro e revestimento em cinza",
-    w: 1200,
-    h: 1600,
+    w: 1086,
+    h: 1448,
   },
   quartoBanheiro: {
-    src: quartoBanheiro.url,
+    src: "/images/quarto-banheiro.jpeg",
     alt: "Quarto com acesso ao banheiro e revestimentos em marrom",
-    w: 1600,
-    h: 1200,
+    w: 1086,
+    h: 1448,
   },
   varanda: {
-    src: varanda.url,
+    src: "/images/varanda.jpeg",
     alt: "Varanda com guarda-corpo de vidro e vista para a rua",
     w: 1086,
     h: 1448,
   },
   pia: {
-    src: pia.url,
+    src: "/images/pia-espelho.jpeg",
     alt: "Pias com bancada em granito e espelho iluminado",
-    w: 1086,
-    h: 1448,
+    w: 1600,
+    h: 1200,
   },
 } satisfies Record<string, Photo>;
 
 export const GALLERY: Photo[] = [
   PHOTOS.quartoJanela,
-  PHOTOS.quartoCasalSolteiro,
   PHOTOS.quartoBranco,
+  PHOTOS.quartoCasalSolteiro,
   PHOTOS.quartoTv,
   PHOTOS.quartoBanheiro,
-  PHOTOS.banheiro,
   PHOTOS.pia,
   PHOTOS.varanda,
 ];

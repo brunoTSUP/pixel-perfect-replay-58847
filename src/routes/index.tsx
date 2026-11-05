@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, BedDouble, CarFront, Coffee, KeyRound, MapPin, Snowflake, Wifi } from "lucide-react";
+import { ArrowRight, BedDouble, CarFront, Coffee, createLucideIcon, KeyRound, MapPin, Snowflake, Wifi } from "lucide-react";
 import { btn } from "@/components/ui/btn";
 import { Reveal } from "@/components/layout/Reveal";
 import { CtaSection } from "@/components/layout/CtaSection";
@@ -7,7 +7,7 @@ import { HOTEL, PHOTOS } from "@/lib/site";
 
 const TITLE = "Hotel Moreno | Hotel e Hospedagem em Itajobi - SP";
 const DESC =
-  "Conheça o Hotel Moreno em Itajobi - SP. São 31 quartos, Wi-Fi, estacionamento, café da manhã e ambientes confortáveis. Entre em contato!";
+  "Conheça o Hotel Moreno em Itajobi - SP. Quartos climátizados, Wi-Fi, estacionamento, café da manhã e ambientes confortáveis. Entre em contato!";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -23,11 +23,16 @@ export const Route = createFileRoute("/")({
   component: Home,
 });
 
+const Elevator = createLucideIcon("Elevator", [
+  ["rect", { x: "4", y: "8", width: "16", height: "14", rx: "1", key: "doors" }],
+  ["path", { d: "M12 8v14M7 5V2m-2 2 2-2 2 2M17 2v3m-2-2 2 2 2-2", key: "arrows" }],
+]);
+
 const FEATURES = [
-  { icon: Wifi, title: "Wi-Fi", text: "Conectividade e praticidade durante sua estadia." },
-  { icon: CarFront, title: "Estacionamento", text: "Mais comodidade para quem viaja de carro." },
-  { icon: Coffee, title: "Café da manhã", text: "Comece o dia com mais conforto e tranquilidade." },
-  { icon: BedDouble, title: "31 quartos", text: "Acomodações preparadas para receber nossos hóspedes." },
+  { icon: Coffee, title: "Buffet de café da manhã", text: "Comece o dia com mais conforto e tranquilidade." },
+  { icon: Elevator, title: "Elevador", text: "Mais agilidade na sua locomoção." },
+  { icon: CarFront, title: "Estacionamento no local", text: "Mais comodidade para quem viaja de carro." },
+  { icon: Wifi, title: "Wi-Fi Grátis", text: "Conectividade e praticidade durante sua estadia." },
   { icon: KeyRound, title: "Fechaduras eletrônicas", text: "Mais praticidade e segurança no acesso aos quartos." },
   { icon: Snowflake, title: "Ambientes climatizados", text: "Mais conforto para seus momentos de descanso." },
 ];
@@ -39,34 +44,59 @@ const FEATURED = [
     title: "Praticidade no dia a dia",
     text: "Comodidades que tornam sua estadia mais agradável.",
   },
-  { photo: PHOTOS.pia, title: "Atenção aos detalhes", text: "Ambientes planejados para receber você." },
+  { photo: PHOTOS.quartoBanheiro, title: "Atenção aos detalhes", text: "Ambientes planejados para receber você." },
 ];
 
 function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="flex min-h-[80vh] items-center bg-background pb-20 pt-36 text-foreground">
-        <div className="container-site flex flex-col items-center text-center">
-          <p className="eyebrow animate-in fade-in slide-in-from-bottom-2 duration-700">Bem-vindo ao Hotel Moreno</p>
-          <span className="mt-6 block h-px w-12 bg-accent animate-in fade-in duration-1000" aria-hidden="true" />
-          <h1 className="mt-8 max-w-4xl text-5xl leading-[1.05] animate-in fade-in slide-in-from-bottom-4 duration-1000 sm:text-6xl md:text-7xl lg:text-8xl">
-            Seu descanso merece um lugar especial.
-          </h1>
-          <p className="mt-8 max-w-xl text-base leading-relaxed text-muted-foreground animate-in fade-in slide-in-from-bottom-4 duration-1000 md:text-lg">
-            Conforto, tranquilidade e hospitalidade em Itajobi, São Paulo.
-          </p>
-          <div className="mt-10 flex w-full flex-col gap-3 animate-in fade-in slide-in-from-bottom-4 duration-1000 sm:w-auto sm:flex-row">
-            <Link to="/contato" className={btn()}>
-              Consultar disponibilidade
-            </Link>
-            <Link to="/quartos" className={btn({ variant: "outline" })}>
-              Conhecer quartos
-            </Link>
+      <section className="bg-background px-4 pb-8 pt-24 md:px-8 md:pb-12 md:pt-28" aria-labelledby="hero-title">
+        <div className="hotel-hero">
+          <div className="hotel-hero-photo">
+            <img
+              src={PHOTOS.hero.src}
+              alt={PHOTOS.hero.alt}
+              width={PHOTOS.hero.w}
+              height={PHOTOS.hero.h}
+              fetchPriority="high"
+              className="h-full w-full object-cover"
+            />
+            <div className="hotel-hero-photo-overlay absolute inset-0" />
+            <div className="absolute bottom-8 left-6 text-white md:bottom-10 md:left-10">
+              <p className="flex items-center gap-2 text-xs tracking-[0.2em] uppercase">
+                <MapPin className="h-4 w-4" aria-hidden="true" /> Itajobi · São Paulo
+              </p>
+              <p className="mt-3 font-display text-2xl md:text-3xl">Sinta-se bem. Sinta-se em casa.</p>
+            </div>
           </div>
-          <p className="mt-10 text-xs tracking-[0.25em] text-muted-foreground uppercase">
-            Café da manhã · Wi-Fi · Estacionamento ·
-          </p>
+          <div className="hotel-hero-panel" aria-hidden="true" />
+          <div className="hotel-hero-content">
+            <p className="text-xs font-medium tracking-[0.22em] text-accent uppercase">Bem-vindo ao Hotel Moreno</p>
+            <span className="mx-auto mt-6 block h-px w-12 bg-accent/40" aria-hidden="true" />
+            <h1 id="hero-title" className="mt-6 text-4xl leading-[1.08] sm:text-5xl lg:text-6xl xl:text-7xl">
+              Seu descanso merece um lugar <em className="font-normal">especial.</em>
+            </h1>
+            <p className="mx-auto mt-6 max-w-sm text-base leading-relaxed text-[#65594e]">
+              Conforto, tranquilidade e hospitalidade para sua estadia em Itajobi.
+            </p>
+            <div className="mt-8 flex flex-col items-stretch gap-4 sm:items-center">
+              <Link to="/contato" className={btn({ variant: "accent" })}>
+                Consultar disponibilidade <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
+              <Link
+                to="/quartos"
+                className="inline-flex min-h-11 items-center justify-center gap-2 text-sm text-foreground underline decoration-accent/40 underline-offset-8 transition-colors hover:text-accent hover:decoration-accent focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+              >
+                Conhecer nossos quartos
+              </Link>
+            </div>
+            <ul className="mt-8 flex flex-wrap justify-center gap-x-5 gap-y-3 border-t border-foreground/15 pt-6 text-xs text-[#65594e]" aria-label="Comodidades em destaque">
+              <li className="flex items-center gap-2"><Coffee className="h-4 w-4" aria-hidden="true" /> Café da manhã</li>
+              <li className="flex items-center gap-2"><Wifi className="h-4 w-4" aria-hidden="true" /> Wi-Fi</li>
+              <li className="flex items-center gap-2"><CarFront className="h-4 w-4" aria-hidden="true" /> Estacionamento</li>
+            </ul>
+          </div>
         </div>
       </section>
 

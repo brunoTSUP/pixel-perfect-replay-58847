@@ -39,7 +39,6 @@ const HOTEL_SCHEMA = {
     "Ar-condicionado",
     "Televisão",
     "Frigobar",
-    "Banheiro privativo",
   ].map((name) => ({ "@type": "LocationFeatureSpecification", name, value: true })),
 };
 
@@ -107,7 +106,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Hotel Moreno | Itajobi - SP" },
       {
         name: "description",
-        content: "Hotel Moreno em Itajobi - SP: 31 quartos, Wi-Fi, estacionamento e café da manhã.",
+        content: "Hotel Moreno em Itajobi - SP: quartos, Wi-Fi, estacionamento e café da manhã.",
       },
       { property: "og:site_name", content: "Hotel Moreno" },
       { property: "og:locale", content: "pt_BR" },

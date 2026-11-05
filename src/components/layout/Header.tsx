@@ -7,7 +7,6 @@ import { btn } from "@/components/ui/btn";
 const NAV = [
   { to: "/", label: "Início" },
   { to: "/quartos", label: "Quartos" },
-  { to: "/contato", label: "Contato" },
 ] as const;
 
 export function Header() {

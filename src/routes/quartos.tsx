@@ -24,16 +24,11 @@ export const Route = createFileRoute("/quartos")({
 });
 
 const ROOM = [
-  { icon: Wifi, label: "Wi-Fi" },
   { icon: Snowflake, label: "Ar-condicionado" },
-  { icon: Tv, label: "Televisão" },
-  { icon: Refrigerator, label: "Frigobar" },
-  { icon: Bath, label: "Banheiro privativo" },
   { icon: KeyRound, label: "Fechaduras eletrônicas" },
-];
-const SERVICES = [
-  { icon: Coffee, label: "Café da manhã" },
-  { icon: CarFront, label: "Estacionamento" },
+  { icon: Refrigerator, label: "Frigobar" },
+  { icon: Tv, label: "Televisão" },
+  { icon: Wifi, label: "Wi-Fi" },
 ];
 
 function Quartos() {
@@ -63,7 +58,7 @@ function Quartos() {
           <h2 className="text-4xl md:text-5xl">Conforto para sua estadia</h2>
           <div className="space-y-4 leading-relaxed text-muted-foreground">
             <p>
-              O Hotel Moreno conta com 31 quartos, oferecendo ambientes acolhedores, decoração contemporânea e
+              O Hotel Moreno conta com quartos, oferecendo ambientes acolhedores, decoração contemporânea e
               comodidades pensadas para proporcionar uma experiência agradável.
             </p>
             <p>
@@ -94,17 +89,6 @@ function Quartos() {
               <p className="eyebrow mb-6">Nas acomodações</p>
               <ul className="grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-3">
                 {ROOM.map((r) => (
-                  <li key={r.label} className="flex items-center gap-3">
-                    <r.icon className="h-6 w-6 shrink-0 text-accent" strokeWidth={1.4} aria-hidden="true" />
-                    <span>{r.label}</span>
-                  </li>
-                ))}
-              </ul>
-            </Reveal>
-            <Reveal delay={120} className="rounded-lg bg-background p-8">
-              <p className="eyebrow mb-6">Serviços do hotel</p>
-              <ul className="space-y-6">
-                {SERVICES.map((r) => (
                   <li key={r.label} className="flex items-center gap-3">
                     <r.icon className="h-6 w-6 shrink-0 text-accent" strokeWidth={1.4} aria-hidden="true" />
                     <span>{r.label}</span>

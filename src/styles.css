@@ -112,6 +112,88 @@
   box-shadow: var(--shadow-soft);
 }
 
+/* Composição da hero: fotografia e painel diagonal inspirado na referência. */
+.hotel-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  max-width: 1440px;
+  margin-inline: auto;
+  background: #e9e0d5;
+  color: var(--foreground);
+  box-shadow: var(--shadow-soft);
+}
+
+.hotel-hero-photo {
+  position: relative;
+  height: clamp(280px, 65vw, 460px);
+}
+
+.hotel-hero-photo img {
+  object-position: 50% 35%;
+}
+
+.hotel-hero-photo-overlay {
+  background: linear-gradient(to top, rgb(47 35 27 / 70%), transparent 48%);
+}
+
+.hotel-hero-panel {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  background: #e9e0d5;
+}
+
+.hotel-hero-panel::after {
+  content: "";
+  position: absolute;
+  width: 160%;
+  height: 160%;
+  bottom: 8%;
+  right: 10%;
+  border-radius: 50%;
+  background: rgb(125 93 65 / 5%);
+}
+
+.hotel-hero-content {
+  position: relative;
+  padding: 44px 24px;
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  .hotel-hero {
+    display: flex;
+    min-height: 700px;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .hotel-hero-photo {
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 65%;
+    height: 100%;
+  }
+
+  .hotel-hero-photo img {
+    object-position: 50% center;
+  }
+
+  .hotel-hero-panel {
+    inset: 0 0 0 auto;
+    z-index: 0;
+    width: 57%;
+    clip-path: polygon(25% 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  .hotel-hero-content {
+    width: 47%;
+    padding: 56px 40px 56px 32px;
+  }
+}
+
 @utility reveal {
   opacity: 0;
   transform: translateY(18px);
