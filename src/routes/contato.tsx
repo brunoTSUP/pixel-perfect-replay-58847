@@ -249,7 +249,7 @@ function MapSection() {
           <div>
             <p className="eyebrow">Localização</p>
             <h2 className="mt-4 text-4xl">Como chegar</h2>
-            <p className="mt-3 text-muted-foreground">{HOTEL.street}, Itajobi - SP, CEP: 15840-000</p>
+            <p className="mt-3 text-muted-foreground">{HOTEL.fullAddress}</p>
           </div>
           <a href={HOTEL.mapsHref} target="_blank" rel="noopener noreferrer" className={btn({ variant: "outline" })}>
             Abrir no Google Maps <ArrowRight className="h-4 w-4" />

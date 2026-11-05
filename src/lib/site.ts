@@ -10,8 +10,9 @@ import pia from "@/assets/images/pia-espelho.webp.asset.json";
 
 export const HOTEL = {
   name: "Hotel Moreno",
-  street: "Avenida Catanduva, 223 - Jardim Ferreira",
-  cityLine: "Itajobi - SP, CEP: 15840-000",
+  fullAddress: "Av. Catanduva, 223 - Itajobi, SP, 15841-110",
+  street: "Av. Catanduva, 223",
+  cityLine: "Itajobi, SP, 15841-110",
   whatsappDisplay: "(17) 99715-1608",
   phoneDisplay: "(17) 3546-1608",
   phoneHref: "tel:+551735461608",
@@ -20,9 +21,9 @@ export const HOTEL = {
   whatsappMessageHref:
     "https://wa.me/5517997151608?text=Ol%C3%A1%21%20Gostaria%20de%20consultar%20a%20disponibilidade%20de%20quartos%20no%20Hotel%20Moreno.",
   mapsHref:
-    "https://www.google.com/maps/search/?api=1&query=Avenida+Catanduva+223+Jardim+Ferreira+Itajobi+SP",
+    "https://www.google.com/maps/search/?api=1&query=Av.+Catanduva%2C+223+-+Itajobi%2C+SP%2C+15841-110",
   mapsEmbed:
-    "https://maps.google.com/maps?q=Avenida%20Catanduva%2C%20223%20-%20Jardim%20Ferreira%2C%20Itajobi%20-%20SP%2C%2015840-000&z=17&output=embed",
+    "https://maps.google.com/maps?q=Av.%20Catanduva%2C%20223%20-%20Itajobi%2C%20SP%2C%2015841-110&z=17&output=embed",
 };
 
 export type Photo = { src: string; alt: string; w: number; h: number };
