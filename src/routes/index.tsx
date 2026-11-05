@@ -194,9 +194,19 @@ function Home() {
               <span>{HOTEL.fullAddress}</span>
             </p>
           </div>
-          <a href={HOTEL.mapsHref} target="_blank" rel="noopener noreferrer" className={btn()}>
-            Como chegar <ArrowRight className="h-4 w-4" />
-          </a>
+          <div className="flex flex-col items-start gap-6 md:items-end">
+            <img
+              src={PHOTOS.fachada.src}
+              alt={PHOTOS.fachada.alt}
+              width={PHOTOS.fachada.w}
+              height={PHOTOS.fachada.h}
+              loading="lazy"
+              className="aspect-[3/5] w-48 rounded-lg object-cover shadow-soft md:w-56"
+            />
+            <a href={HOTEL.mapsHref} target="_blank" rel="noopener noreferrer" className={btn()}>
+              Como chegar <ArrowRight className="h-4 w-4" />
+            </a>
+          </div>
         </Reveal>
       </section>
 
