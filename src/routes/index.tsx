@@ -63,22 +63,15 @@ function Home() {
               className="h-full w-full object-cover"
             />
             <div className="hotel-hero-photo-overlay absolute inset-0" />
-            <div className="absolute bottom-8 left-6 text-white md:bottom-10 md:left-10">
-              <p className="flex items-center gap-2 text-xs tracking-[0.2em] uppercase">
-                <MapPin className="h-4 w-4" aria-hidden="true" /> Itajobi · São Paulo
-              </p>
-              <p className="mt-3 font-display text-2xl md:text-3xl">Sinta-se bem. Sinta-se em casa.</p>
-            </div>
           </div>
           <div className="hotel-hero-panel" aria-hidden="true" />
           <div className="hotel-hero-content">
             <p className="text-xs font-medium tracking-[0.22em] text-accent uppercase">Bem-vindo ao Hotel Moreno</p>
             <span className="mx-auto mt-6 block h-px w-12 bg-accent/40" aria-hidden="true" />
-            <h1 id="hero-title" className="mt-6 text-4xl leading-[1.08] sm:text-5xl lg:text-6xl xl:text-7xl">
-              Seu descanso merece um lugar <em className="font-normal">especial.</em>
+            <h1 id="hero-title" className="mt-6 text-4xl leading-[1.08] sm:text-2xl lg:text-3xl xl:text-4xl">
+              Hospedagem para diferentes momentos da sua viagem
             </h1>
             <p className="mx-auto mt-6 max-w-sm text-base leading-relaxed text-[#65594e]">
-              Conforto, tranquilidade e hospitalidade para sua estadia em Itajobi.
             </p>
             <div className="mt-8 flex flex-col items-stretch gap-4 sm:items-center">
               <Link to="/contato" className={btn({ variant: "accent" })}>
@@ -105,15 +98,12 @@ function Home() {
         <div className="container-site grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
           <Reveal>
             <p className="eyebrow">Hospitalidade</p>
-            <h2 className="mt-4 text-4xl leading-tight md:text-5xl">Bem-vindo ao Hotel Moreno</h2>
+            <h2 className="mt-4 text-3xl leading-tight md:text-4xl">Cada viagem tem um motivo<br/>Sua hospedagem tem um endereço</h2>
             <p className="mt-6 leading-relaxed text-muted-foreground">
-              No Hotel Moreno, cada detalhe foi pensado para proporcionar uma estadia confortável e agradável. Nossa
-              estrutura combina ambientes modernos, praticidade e hospitalidade, oferecendo um espaço acolhedor para
-              quem visita Itajobi.
+              Seja a trabalho, a passeio, de passagem pela cidade ou para aproveitar uma pausa na rotina, o Hotel Moreno oferece uma opção prática e acolhedora para diferentes necessidades de hospedagem
             </p>
             <p className="mt-4 leading-relaxed text-muted-foreground">
-              Seja para descansar ou para uma viagem de trabalho, encontre aqui a tranquilidade e a comodidade que você
-              procura.
+              Estamos preparados para receber você
             </p>
           </Reveal>
           <Reveal delay={150}>
