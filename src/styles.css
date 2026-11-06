@@ -114,6 +114,8 @@
 
 /* Composição da hero: fotografia e painel diagonal inspirado na referência. */
 .hotel-hero {
+  display: flex;
+  flex-direction: column;
   position: relative;
   isolation: isolate;
   overflow: hidden;
@@ -125,6 +127,8 @@
 }
 
 .hotel-hero-photo {
+  order: 2;
+  width: 100%;
   position: relative;
   height: clamp(280px, 65vw, 460px);
 }
@@ -162,9 +166,10 @@
   text-align: center;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
   .hotel-hero {
     display: flex;
+    flex-direction: row;
     min-height: 700px;
     align-items: center;
     justify-content: flex-end;
