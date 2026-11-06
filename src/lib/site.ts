@@ -20,8 +20,8 @@ export type Photo = { src: string; alt: string; w: number; h: number };
 
 export const PHOTOS = {
   hero: {
-    src: "/images/Mulher Sorridente com Laptop na Cama.png",
-    alt: "Mulher sorridente usando um laptop enquanto relaxa na cama",
+    src: "/images/Quarto de Hotel com Pintura de Cavalos.png",
+    alt: "Quarto de Hotel com Pintura de Cavalos",
     w: 1536,
     h: 1024,
   },
