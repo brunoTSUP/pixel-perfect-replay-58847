@@ -157,7 +157,7 @@
   align-items: center;
   gap: 24px;
   position: relative;
-  max-width: 1024px;
+  max-width: 1280px;
   margin-inline: auto;
   color: var(--foreground);
 }
@@ -182,7 +182,6 @@
 
 .hotel-hero-content {
   min-width: 0;
-  padding-block: 8px;
 }
 
 .hotel-hero-title {
@@ -198,7 +197,7 @@
   flex-direction: column;
   align-items: center;
   gap: 16px;
-  margin-top: 32px;
+  margin-top: 54px;
 }
 
 .hotel-hero-features {
@@ -256,21 +255,17 @@
   .hotel-hero-section {
     padding: 104px 40px 24px;
   }
-}
 
-@media (min-width: 1024px) {
   .hotel-hero {
-    grid-template-columns: minmax(0, 1.24fr) minmax(0, 0.76fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: clamp(32px, 4vw, 64px);
-  }
-
-  .hotel-hero-title {
-    font-size: clamp(2.25rem, 3.4vw, 3.25rem);
   }
 
   .hotel-hero-photo {
     grid-column: 2;
     grid-row: 1;
+    max-width: none;
+    justify-self: stretch;
     border-radius: 28px;
   }
 
@@ -279,23 +274,21 @@
     grid-row: 1;
   }
 
-  .hotel-hero-features {
-    margin-top: 32px;
+  .hotel-hero-actions {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 28px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hotel-hero-title {
+    font-size: clamp(2.25rem, 3.4vw, 3.25rem);
   }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-  .hotel-hero-photo {
-    max-width: 260px;
-    justify-self: center;
-  }
-
-  .hotel-hero-content {
-    width: 100%;
-    max-width: 640px;
-    justify-self: center;
-  }
-
   .hotel-hero-title {
     max-width: none;
   }
@@ -354,23 +347,6 @@
     justify-content: center;
   }
 
-  .hotel-hero-features {
-    margin-top: 24px;
-  }
-
-  .hotel-hero-features li {
-    min-width: 0;
-    gap: 8px;
-    padding-inline: 4px;
-    font-size: clamp(0.6875rem, 2.9vw, 0.8125rem);
-    overflow-wrap: anywhere;
-  }
-
-  .hotel-hero-features svg {
-    width: 20px;
-    height: 20px;
-    flex-shrink: 0;
-  }
 }
 
 @utility reveal {

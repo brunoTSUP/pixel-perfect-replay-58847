@@ -126,17 +126,6 @@ function Home() {
                 <span className="hidden md:inline">Conhecer nossos quartos</span>
               </Link>
             </div>
-            <ul className="hotel-hero-features grid" aria-label="Comodidades em destaque">
-              <li>
-                <Coffee className="h-4 w-4" aria-hidden="true" /> Café da manhã
-              </li>
-              <li>
-                <Wifi className="h-4 w-4" aria-hidden="true" /> Wi-Fi
-              </li>
-              <li>
-                <CarFront className="h-4 w-4" aria-hidden="true" /> Estacionamento
-              </li>
-            </ul>
           </div>
         </div>
       </section>

@@ -20,7 +20,7 @@ export type Photo = { src: string; alt: string; w: number; h: number };
 
 export const PHOTOS = {
   hero: {
-    src: "/images/fachada-hero.webp",
+    src: "/images/Fachada moderna do Hotel Moreno (1).png",
     alt: "Fachada do Hotel Moreno com entrada envidraçada e varanda",
     w: 971,
     h: 1619,
