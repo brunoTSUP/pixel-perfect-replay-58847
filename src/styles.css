@@ -39,6 +39,7 @@
 }
 
 :root {
+  --site-max-width: 1024px;
   --radius: 1.25rem;
   /* Referência visual: papel claro, areia, bronze e marrom profundo. */
   --background: #faf8f5;
@@ -97,7 +98,7 @@
 
 @utility container-site {
   width: 100%;
-  max-width: 80rem;
+  max-width: var(--site-max-width);
   margin-inline: auto;
   padding-inline: 1.25rem;
   @media (min-width: 768px) {
@@ -155,7 +156,7 @@
   align-items: center;
   gap: 36px;
   position: relative;
-  max-width: 1360px;
+  max-width: var(--site-max-width);
   margin-inline: auto;
   color: var(--foreground);
 }
