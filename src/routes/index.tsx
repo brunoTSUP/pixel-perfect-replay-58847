@@ -60,7 +60,7 @@ function Home() {
               width={PHOTOS.hero.w}
               height={PHOTOS.hero.h}
               fetchPriority="high"
-              className="h-full w-full object-cover"
+              className="block h-auto w-full"
             />
             <div className="hotel-hero-photo-overlay absolute inset-0" />
           </div>
@@ -68,11 +68,12 @@ function Home() {
           <div className="hotel-hero-content">
             <p className="text-xs font-medium tracking-[0.22em] text-accent uppercase">Bem-vindo ao Hotel Moreno</p>
             <span className="mx-auto mt-6 block h-px w-12 bg-accent/40" aria-hidden="true" />
-            <h1 id="hero-title" className="mt-6 text-4xl leading-[1.08] sm:text-2xl lg:text-3xl xl:text-4xl">
+            <h1
+              id="hero-title"
+              className="mx-auto mt-6 max-w-lg text-balance text-4xl leading-[1.15] md:text-3xl lg:text-4xl xl:text-5xl"
+            >
               Hospedagem para diferentes momentos da sua viagem
             </h1>
-            <p className="mx-auto mt-6 max-w-sm text-base leading-relaxed text-[#65594e]">
-            </p>
             <div className="mt-8 flex flex-col items-stretch gap-4 sm:items-center">
               <Link to="/contato" className={btn({ variant: "accent" })}>
                 Consultar disponibilidade <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -84,10 +85,19 @@ function Home() {
                 Conhecer nossos quartos
               </Link>
             </div>
-            <ul className="mt-8 flex flex-wrap justify-center gap-x-5 gap-y-3 border-t border-foreground/15 pt-6 text-xs text-[#65594e]" aria-label="Comodidades em destaque">
-              <li className="flex items-center gap-2"><Coffee className="h-4 w-4" aria-hidden="true" /> Café da manhã</li>
-              <li className="flex items-center gap-2"><Wifi className="h-4 w-4" aria-hidden="true" /> Wi-Fi</li>
-              <li className="flex items-center gap-2"><CarFront className="h-4 w-4" aria-hidden="true" /> Estacionamento</li>
+            <ul
+              className="mt-8 hidden flex-wrap justify-center gap-x-5 gap-y-3 border-t border-foreground/15 pt-6 text-xs text-[#535b5e] md:flex"
+              aria-label="Comodidades em destaque"
+            >
+              <li className="flex items-center gap-2">
+                <Coffee className="h-4 w-4" aria-hidden="true" /> Café da manhã
+              </li>
+              <li className="flex items-center gap-2">
+                <Wifi className="h-4 w-4" aria-hidden="true" /> Wi-Fi
+              </li>
+              <li className="flex items-center gap-2">
+                <CarFront className="h-4 w-4" aria-hidden="true" /> Estacionamento
+              </li>
             </ul>
           </div>
         </div>
@@ -155,7 +165,7 @@ function Home() {
               </p>
             </div>
             <Link to="/quartos" className={btn({ variant: "outline" })}>
-              Ver todas as acomodações <ArrowRight className="h-4 w-4" />
+              Ver as acomodações <ArrowRight className="h-4 w-4" />
             </Link>
           </Reveal>
           <div className="mt-14 grid gap-8 md:grid-cols-3">
@@ -223,14 +233,6 @@ function Home() {
             </p>
           </div>
           <div className="flex flex-col items-start gap-6 md:items-end">
-            <img
-              src={PHOTOS.fachada.src}
-              alt={PHOTOS.fachada.alt}
-              width={PHOTOS.fachada.w}
-              height={PHOTOS.fachada.h}
-              loading="lazy"
-              className="aspect-[3/5] w-48 rounded-lg object-cover shadow-soft md:w-56"
-            />
             <a href={HOTEL.mapsHref} target="_blank" rel="noopener noreferrer" className={btn()}>
               Como chegar <ArrowRight className="h-4 w-4" />
             </a>

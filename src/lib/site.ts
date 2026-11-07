@@ -20,10 +20,10 @@ export type Photo = { src: string; alt: string; w: number; h: number };
 
 export const PHOTOS = {
   hero: {
-    src: "/images/Quarto de Hotel com Pintura de Cavalos.png",
-    alt: "Quarto de Hotel com Pintura de Cavalos",
-    w: 1536,
-    h: 1024,
+    src: "/images/fachada-completa-hero.webp",
+    alt: "Fachada do Hotel Moreno com identificação, entrada envidraçada e varanda",
+    w: 1024,
+    h: 1536,
   },
   fachada: { src: "/images/fachada.jpeg", alt: "Fachada moderna do Hotel Moreno em Itajobi", w: 375, h: 625 },
   quartoCasalSolteiro: {
