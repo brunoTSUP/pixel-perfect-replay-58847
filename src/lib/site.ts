@@ -20,10 +20,10 @@ export type Photo = { src: string; alt: string; w: number; h: number };
 
 export const PHOTOS = {
   hero: {
-    src: "/images/fachada-completa-hero.webp",
-    alt: "Fachada do Hotel Moreno com identificação, entrada envidraçada e varanda",
-    w: 1024,
-    h: 1536,
+    src: "/images/fachada-hero.webp",
+    alt: "Fachada do Hotel Moreno com entrada envidraçada e varanda",
+    w: 971,
+    h: 1619,
   },
   fachada: { src: "/images/fachada.jpeg", alt: "Fachada moderna do Hotel Moreno em Itajobi", w: 375, h: 625 },
   quartoCasalSolteiro: {

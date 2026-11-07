@@ -6,7 +6,7 @@ import { Reveal } from "./Reveal";
 
 export function CtaSection({ title, text }: { title: string; text: string }) {
   return (
-    <section className="bg-graphite text-graphite-foreground">
+    <section className="site-cta text-graphite-foreground">
       <Reveal className="container-site py-24 text-center md:py-32">
         <h2 className="mx-auto max-w-2xl text-4xl leading-tight md:text-5xl">{title}</h2>
         <p className="mx-auto mt-5 max-w-xl opacity-75">{text}</p>

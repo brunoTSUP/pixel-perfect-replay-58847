@@ -20,7 +20,7 @@ export const Route = createFileRoute("/privacidade")({
 
 function Privacidade() {
   return (
-    <section className="bg-surface pb-24 pt-36 md:pt-44">
+    <section className="site-page-intro pb-24 pt-36 md:pt-44">
       <div className="container-site max-w-3xl space-y-6 leading-relaxed text-muted-foreground">
         <h1 className="text-4xl text-foreground md:text-5xl">Política de Privacidade</h1>
         <p>

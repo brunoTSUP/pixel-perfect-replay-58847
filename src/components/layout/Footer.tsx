@@ -7,13 +7,13 @@ export function Footer() {
     <footer className="bg-graphite text-graphite-foreground">
       <div className="container-site grid gap-12 py-16 md:grid-cols-3">
         <div>
-          <p className="font-display text-2xl tracking-[0.18em]">HOTEL MORENO</p>
+          <p className="hotel-wordmark inline-block text-2xl">HOTEL MORENO</p>
           <p className="mt-4 max-w-xs text-sm leading-relaxed opacity-75">
             Conforto, praticidade e hospitalidade para sua estadia em Itajobi.
           </p>
         </div>
         <nav aria-label="Rodapé">
-          <p className="eyebrow mb-4">Navegação</p>
+          <p className="mb-4 text-xs font-medium tracking-[0.22em] text-secondary uppercase">Navegação</p>
           <ul className="space-y-3 text-sm">
             <li><Link to="/" className="opacity-80 hover:opacity-100">Início</Link></li>
             <li><Link to="/quartos" className="opacity-80 hover:opacity-100">Quartos</Link></li>
@@ -21,7 +21,7 @@ export function Footer() {
           </ul>
         </nav>
         <div>
-          <p className="eyebrow mb-4">Contato</p>
+          <p className="mb-4 text-xs font-medium tracking-[0.22em] text-secondary uppercase">Contato</p>
           <ul className="space-y-3 text-sm opacity-85">
             <li className="flex gap-3">
               <MapPin className="mt-0.5 h-4 w-4 shrink-0" />

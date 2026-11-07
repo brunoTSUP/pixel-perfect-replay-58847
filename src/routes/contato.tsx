@@ -36,7 +36,7 @@ const CONTACTS = [
 function Contato() {
   return (
     <>
-      <section className="bg-surface pb-16 pt-36 md:pt-44">
+      <section className="site-page-intro border-b border-border/70 pb-16 pt-36 md:pt-44">
         <div className="container-site">
           <p className="eyebrow">Fale conosco</p>
           <h1 className="mt-4 text-5xl md:text-6xl">Entre em contato</h1>
@@ -129,7 +129,7 @@ function ContactForm() {
 
   if (status === "success") {
     return (
-      <div role="status" className="rounded-lg bg-surface p-10 shadow-soft">
+      <div role="status" className="rounded-lg border border-border bg-surface p-10 shadow-soft">
         <h2 className="text-3xl">Mensagem enviada</h2>
         <p className="mt-3 text-muted-foreground">Obrigado pelo contato! Nossa equipe responderá em breve.</p>
         <button type="button" onClick={() => setStatus("idle")} className={cn(btn({ variant: "outline" }), "mt-6")}>
@@ -140,7 +140,7 @@ function ContactForm() {
   }
 
   return (
-    <form noValidate onSubmit={onSubmit} className="rounded-lg bg-surface p-6 shadow-soft md:p-10">
+    <form noValidate onSubmit={onSubmit} className="rounded-lg border border-border bg-surface p-6 shadow-soft md:p-10">
       <h2 className="text-3xl">Envie uma mensagem</h2>
 
       {!configured && (
