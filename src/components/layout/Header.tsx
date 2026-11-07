@@ -1,8 +1,10 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { CalendarDays, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
-import { btn } from "@/components/ui/btn";
+
+const headerCta =
+  "inline-flex min-h-11 items-center justify-center gap-2 rounded-[6px] bg-primary px-6 py-3 text-sm font-medium tracking-wide text-primary-foreground shadow-soft transition-all duration-300 hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2";
 
 const NAV = [
   { to: "/", label: "Início" },
@@ -11,48 +13,33 @@ const NAV = [
 
 export function Header() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   useEffect(() => setOpen(false), [pathname]);
 
   return (
-    <header
-      className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-all duration-500",
-        "border-b border-border/70 bg-background/95 text-foreground backdrop-blur-md",
-        scrolled && "shadow-soft",
-      )}
-    >
-      <div className="container-site flex h-22 items-center justify-between gap-4 py-4">
+    <header className="reference-page fixed inset-x-0 top-0 z-50 border-b border-border bg-surface text-foreground transition-all duration-500">
+      <div className="container-site flex h-18 items-center justify-between gap-4 py-4">
         <Link to="/" className="flex min-w-0 flex-col leading-none" aria-label="Hotel Moreno — Início">
-          <span className="hotel-wordmark text-xl sm:text-2xl">HOTEL MORENO</span>
-          <span className="mt-1 text-center text-[0.6rem] tracking-[0.3em] text-muted-foreground">
+          <span className="font-display text-xl tracking-[0.18em] sm:text-2xl">HOTEL MORENO</span>
+          <span className="mt-1 text-[0.65rem] tracking-[0.35em] text-muted-foreground">
             ITAJOBI · SP
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex lg:gap-12" aria-label="Principal">
+        <nav className="hidden items-center gap-8 md:flex" aria-label="Principal">
           {NAV.map((n) => (
             <Link
               key={n.to}
               to={n.to}
-              className="relative py-2 text-sm tracking-wide after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-accent after:transition-all hover:after:w-full"
-              activeProps={{ className: "font-semibold after:w-full" }}
+              className="relative text-sm tracking-wide after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-accent after:transition-all hover:after:w-full"
+              activeProps={{ className: "after:w-full" }}
               activeOptions={{ exact: true }}
             >
               {n.label}
             </Link>
           ))}
-          <Link to="/contato" className={btn({ variant: "outline" })}>
-            <CalendarDays className="h-4 w-4" aria-hidden="true" />
+          <Link to="/contato" className={headerCta}>
             Consultar disponibilidade
           </Link>
         </nav>
@@ -88,7 +75,7 @@ export function Header() {
                 {n.label}
               </Link>
             ))}
-            <Link to="/contato" onClick={() => setOpen(false)} className={cn(btn(), "mt-3")}>
+            <Link to="/contato" onClick={() => setOpen(false)} className={cn(headerCta, "mt-3")}>
               Consultar disponibilidade
             </Link>
           </div>

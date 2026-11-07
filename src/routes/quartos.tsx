@@ -33,24 +33,23 @@ const ROOM = [
 
 function Quartos() {
   return (
-    <>
-      <section className="site-page-intro pb-12 pt-32 md:pb-16 md:pt-40">
-        <div className="container-site grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-          <div>
-            <p className="eyebrow">Acomodações</p>
-            <h1 className="mt-6 text-5xl leading-[1.08] md:text-6xl">Nossas acomodações</h1>
-            <p className="mt-6 max-w-lg leading-relaxed text-muted-foreground">
-              Espaços preparados para proporcionar conforto, tranquilidade e praticidade.
-            </p>
-          </div>
-          <img
-            src={PHOTOS.quartoJanela.src}
-            alt={PHOTOS.quartoJanela.alt}
-            width={PHOTOS.quartoJanela.w}
-            height={PHOTOS.quartoJanela.h}
-            fetchPriority="high"
-            className="aspect-[4/3] w-full rounded-lg object-cover"
-          />
+    <div className="reference-page">
+      <section className="relative isolate flex min-h-[60vh] items-end overflow-hidden bg-graphite text-graphite-foreground">
+        <img
+          src={PHOTOS.quartoJanela.src}
+          alt={PHOTOS.quartoJanela.alt}
+          width={PHOTOS.quartoJanela.w}
+          height={PHOTOS.quartoJanela.h}
+          fetchPriority="high"
+          className="absolute inset-0 -z-10 h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-t from-overlay/80 via-overlay/20 to-overlay/40" />
+        <div className="container-site pb-14 pt-32">
+          <p className="eyebrow">Acomodações</p>
+          <h1 className="mt-4 text-5xl md:text-6xl">Nossas acomodações</h1>
+          <p className="mt-4 max-w-lg opacity-85">
+            Espaços preparados para proporcionar conforto, tranquilidade e praticidade.
+          </p>
         </div>
       </section>
 
@@ -106,9 +105,10 @@ function Quartos() {
       </section>
 
       <CtaSection
+        referenceStyle
         title="Encontre a acomodação ideal para sua estadia."
         text="Fale com nossa equipe para consultar disponibilidade e obter mais informações."
       />
-    </>
+    </div>
   );
 }

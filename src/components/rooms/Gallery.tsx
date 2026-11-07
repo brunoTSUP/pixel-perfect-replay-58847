@@ -34,7 +34,7 @@ export function Gallery({ photos }: { photos: Photo[] }) {
 
   return (
     <>
-      <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {photos.map((p, i) => (
           <li key={p.src}>
             <button
@@ -43,7 +43,7 @@ export function Gallery({ photos }: { photos: Photo[] }) {
                 lastTrigger.current = e.currentTarget;
                 setIndex(i);
               }}
-              className="group block w-full overflow-hidden rounded-lg bg-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-4 focus-visible:ring-offset-background"
+              className="group block w-full overflow-hidden rounded-lg bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               aria-label={`Ampliar foto: ${p.alt}`}
             >
               <img

@@ -111,7 +111,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:site_name", content: "Hotel Moreno" },
       { property: "og:locale", content: "pt_BR" },
-      { name: "theme-color", content: "#FAF8F5" },
+      { name: "theme-color", content: "#252A2E" },
     ],
     scripts: [{ type: "application/ld+json", children: JSON.stringify(HOTEL_SCHEMA) }],
   }),

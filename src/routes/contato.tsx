@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowRight, Loader2, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { useEffect, useRef, useState, type FormEvent } from "react";
-import { btn } from "@/components/ui/btn";
+import { referenceBtn as btn } from "@/components/ui/btn";
 import { Reveal } from "@/components/layout/Reveal";
 import { WhatsAppIcon } from "@/components/layout/WhatsAppButton";
 import { HOTEL } from "@/lib/site";
@@ -35,8 +35,8 @@ const CONTACTS = [
 
 function Contato() {
   return (
-    <>
-      <section className="site-page-intro border-b border-border/70 pb-16 pt-36 md:pt-44">
+    <div className="reference-page">
+      <section className="bg-surface pb-16 pt-36 md:pt-44">
         <div className="container-site">
           <p className="eyebrow">Fale conosco</p>
           <h1 className="mt-4 text-5xl md:text-6xl">Entre em contato</h1>
@@ -48,7 +48,7 @@ function Contato() {
 
       <section className="py-20">
         <div className="container-site grid gap-14 lg:grid-cols-[1fr_1.4fr]">
-          <Reveal>
+          <Reveal className="min-w-0">
             <ul className="divide-y divide-border">
               {CONTACTS.map((c) => (
                 <li key={c.label}>
@@ -69,14 +69,14 @@ function Contato() {
               ))}
             </ul>
           </Reveal>
-          <Reveal delay={120}>
+          <Reveal delay={120} className="min-w-0">
             <ContactForm />
           </Reveal>
         </div>
       </section>
 
       <MapSection />
-    </>
+    </div>
   );
 }
 
@@ -129,7 +129,7 @@ function ContactForm() {
 
   if (status === "success") {
     return (
-      <div role="status" className="rounded-lg border border-border bg-surface p-10 shadow-soft">
+      <div role="status" className="rounded-lg bg-surface p-10 shadow-soft">
         <h2 className="text-3xl">Mensagem enviada</h2>
         <p className="mt-3 text-muted-foreground">Obrigado pelo contato! Nossa equipe responderá em breve.</p>
         <button type="button" onClick={() => setStatus("idle")} className={cn(btn({ variant: "outline" }), "mt-6")}>
@@ -140,7 +140,7 @@ function ContactForm() {
   }
 
   return (
-    <form noValidate onSubmit={onSubmit} className="rounded-lg border border-border bg-surface p-6 shadow-soft md:p-10">
+    <form noValidate onSubmit={onSubmit} className="rounded-lg bg-surface p-6 shadow-soft md:p-10">
       <h2 className="text-3xl">Envie uma mensagem</h2>
 
       {!configured && (

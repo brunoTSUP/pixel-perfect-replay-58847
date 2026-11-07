@@ -39,34 +39,34 @@
 }
 
 :root {
-  --site-max-width: 1024px;
   --radius: 1.25rem;
-  /* Referência visual: papel claro, areia, bronze e marrom profundo. */
-  --background: #faf8f5;
-  --surface: #fffdfa;
-  --foreground: #302920;
+  /* Paleta do site de referência: neutros claros, grafite e vermelho. */
+  --background: oklch(0.974 0.004 91);
+  --surface: oklch(1 0 0);
+  --foreground: oklch(0.27 0.01 240);
   --card: var(--surface);
   --card-foreground: var(--foreground);
   --popover: var(--surface);
   --popover-foreground: var(--foreground);
-  --primary: #906426;
-  --primary-foreground: #fffdfa;
-  --secondary: #eee5d8;
+  --primary: oklch(0.27 0.01 240);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.925 0.002 106);
   --secondary-foreground: var(--foreground);
-  --muted: #f1ebe3;
-  --muted-foreground: #6c6258;
-  --accent: #855b22;
-  --accent-foreground: #fffdfa;
-  --destructive: #a33f36;
-  --destructive-foreground: #fdfcf8;
-  --border: #e5ddd2;
-  --input: #b7a58f;
+  --muted: var(--secondary);
+  --muted-foreground: oklch(0.55 0.006 230);
+  --accent: oklch(0.5 0.13 25);
+  --accent-foreground: oklch(1 0 0);
+  --destructive: var(--accent);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.9 0.003 106);
+  --input: oklch(0.88 0.003 106);
   --ring: var(--accent);
-  --graphite: #302b25;
-  --graphite-foreground: #faf6ef;
-  --whatsapp: #24834f;
-  --overlay: #231e19;
-  --shadow-soft: 0 18px 50px -28px color-mix(in oklab, var(--graphite) 22%, transparent);
+  --graphite: var(--foreground);
+  --graphite-foreground: oklch(0.97 0.003 91);
+  --whatsapp: oklch(0.72 0.17 150);
+  --overlay: oklch(0.18 0.01 240);
+  --hero-surface: #faf8f5;
+  --shadow-soft: 0 20px 50px -24px color-mix(in oklab, var(--graphite) 35%, transparent);
 }
 
 @layer base {
@@ -87,7 +87,7 @@
   h2,
   h3 {
     font-family: var(--font-display);
-    letter-spacing: -0.035em;
+    letter-spacing: -0.01em;
     text-wrap: balance;
   }
   ::selection {
@@ -98,7 +98,7 @@
 
 @utility container-site {
   width: 100%;
-  max-width: var(--site-max-width);
+  max-width: 80rem;
   margin-inline: auto;
   padding-inline: 1.25rem;
   @media (min-width: 768px) {
@@ -132,7 +132,8 @@
 }
 
 .hotel-hero-section {
-  padding: 112px 20px 40px;
+  background: var(--hero-surface);
+  padding: 104px 20px 24px;
 }
 
 .hotel-hero-section::before,
@@ -154,9 +155,9 @@
 .hotel-hero {
   display: grid;
   align-items: center;
-  gap: 36px;
+  gap: 24px;
   position: relative;
-  max-width: var(--site-max-width);
+  max-width: 1024px;
   margin-inline: auto;
   color: var(--foreground);
 }
@@ -175,30 +176,34 @@
   height: auto;
 }
 
+.hotel-hero-photo picture {
+  display: block;
+}
+
 .hotel-hero-content {
   min-width: 0;
-  padding-block: 12px;
+  padding-block: 8px;
 }
 
 .hotel-hero-title {
   max-width: 11em;
-  margin-top: 28px;
-  font-size: clamp(2.6rem, 6vw, 4.75rem);
+  margin-top: 20px;
+  font-size: clamp(2.25rem, 4vw, 3.25rem);
   line-height: 1.08;
   font-weight: 400;
 }
 
 .hotel-hero-actions {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   align-items: center;
-  gap: 20px 28px;
-  margin-top: 36px;
+  gap: 16px;
+  margin-top: 32px;
 }
 
 .hotel-hero-features {
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin-top: 48px;
+  margin-top: 32px;
   color: var(--foreground);
 }
 
@@ -225,9 +230,9 @@
 }
 
 .hotel-wordmark {
-  font-family: var(--font-sans);
-  font-weight: 600;
-  letter-spacing: -0.035em;
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: 0.18em;
 }
 
 .amenity-card {
@@ -237,45 +242,134 @@
   background: var(--surface);
 }
 
+.reference-page {
+  --radius: 0.5rem;
+}
+
 .site-cta {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(125deg, var(--graphite), #493c2c);
+  background: var(--graphite);
 }
 
 @media (min-width: 768px) {
   .hotel-hero-section {
-    padding: 124px 40px 56px;
+    padding: 104px 40px 24px;
   }
 }
 
 @media (min-width: 1024px) {
   .hotel-hero {
-    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+    grid-template-columns: minmax(0, 1.24fr) minmax(0, 0.76fr);
     gap: clamp(32px, 4vw, 64px);
   }
 
   .hotel-hero-title {
-    font-size: clamp(3rem, 4.8vw, 4.75rem);
+    font-size: clamp(2.25rem, 3.4vw, 3.25rem);
   }
 
   .hotel-hero-photo {
+    grid-column: 2;
+    grid-row: 1;
     border-radius: 28px;
   }
 
+  .hotel-hero-content {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
   .hotel-hero-features {
-    margin-top: 64px;
+    margin-top: 32px;
   }
 }
 
-@media (max-width: 639px) {
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hotel-hero-photo {
+    max-width: 260px;
+    justify-self: center;
+  }
+
+  .hotel-hero-content {
+    width: 100%;
+    max-width: 640px;
+    justify-self: center;
+  }
+
+  .hotel-hero-title {
+    max-width: none;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .hotel-hero-section {
+    padding-top: 104px;
+  }
+
+  .hotel-hero {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 430px;
+    gap: 20px;
+  }
+
+  .hotel-hero-photo {
+    width: 100%;
+    aspect-ratio: 1;
+    justify-self: center;
+    border-radius: 18px;
+  }
+
+  .hotel-hero-photo img {
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .hotel-hero-content {
+    padding-block: 0;
+  }
+
+  .hotel-hero-content .eyebrow {
+    font-size: 0.625rem;
+    letter-spacing: 0.18em;
+  }
+
+  .hotel-hero-title {
+    max-width: none;
+    margin-top: 14px;
+    font-size: clamp(1.75rem, 7.5vw, 2rem);
+    line-height: 1.15;
+    overflow-wrap: break-word;
+  }
+
   .hotel-hero-actions {
     align-items: stretch;
     flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
   }
 
   .hotel-hero-actions > a {
+    width: 100%;
     justify-content: center;
+  }
+
+  .hotel-hero-features {
+    margin-top: 24px;
+  }
+
+  .hotel-hero-features li {
+    min-width: 0;
+    gap: 8px;
+    padding-inline: 4px;
+    font-size: clamp(0.6875rem, 2.9vw, 0.8125rem);
+    overflow-wrap: anywhere;
+  }
+
+  .hotel-hero-features svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
   }
 }
 

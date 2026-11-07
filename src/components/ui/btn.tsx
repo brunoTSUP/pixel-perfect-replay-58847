@@ -1,4 +1,5 @@
 import { cva, type VariantProps } from "class-variance-authority";
+import { cn } from "@/lib/utils";
 
 export const btn = cva(
   "inline-flex min-h-12 items-center justify-center gap-2 rounded-[10px] px-6 py-3.5 text-sm font-medium tracking-wide transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-60",
@@ -17,3 +18,15 @@ export const btn = cva(
 );
 
 export type BtnVariant = VariantProps<typeof btn>["variant"];
+
+export function referenceBtn(options: VariantProps<typeof btn> = {}) {
+  const variant = options.variant ?? "primary";
+  return cn(
+    btn(options),
+    "min-h-11 rounded-[6px] py-3",
+    variant === "primary" && "border-0 hover:bg-accent hover:brightness-100",
+    variant === "accent" && "border-0 shadow-none",
+    variant === "outline" &&
+      "border-foreground/20 text-foreground hover:border-foreground hover:bg-surface",
+  );
+}

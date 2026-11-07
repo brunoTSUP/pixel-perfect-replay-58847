@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowRight,
-  CalendarDays,
   CarFront,
   Coffee,
   createLucideIcon,
@@ -10,7 +9,7 @@ import {
   Snowflake,
   Wifi,
 } from "lucide-react";
-import { btn } from "@/components/ui/btn";
+import { referenceBtn as btn } from "@/components/ui/btn";
 import { Reveal } from "@/components/layout/Reveal";
 import { CtaSection } from "@/components/layout/CtaSection";
 import { HOTEL, PHOTOS } from "@/lib/site";
@@ -87,24 +86,47 @@ function Home() {
       {/* Hero */}
       <section className="hotel-hero-section" aria-labelledby="hero-title">
         <div className="hotel-hero">
+          <div className="hotel-hero-photo">
+            <picture>
+              <source
+                media="(max-width: 767.98px)"
+                srcSet={PHOTOS.heroMobile.src}
+                width={PHOTOS.heroMobile.w}
+                height={PHOTOS.heroMobile.h}
+              />
+              <img
+                src={PHOTOS.hero.src}
+                alt={PHOTOS.hero.alt}
+                width={PHOTOS.hero.w}
+                height={PHOTOS.hero.h}
+                fetchPriority="high"
+                decoding="async"
+              />
+            </picture>
+          </div>
           <div className="hotel-hero-content">
             <p className="eyebrow">Bem-vindo ao Hotel Moreno</p>
             <h1 id="hero-title" className="hotel-hero-title">
               Hospedagem para diferentes momentos da sua viagem
             </h1>
             <div className="hotel-hero-actions">
-              <Link to="/contato" className={btn({ variant: "accent" })}>
-                <CalendarDays className="h-5 w-5" aria-hidden="true" /> Consultar disponibilidade
+              <Link
+                to="/contato"
+                className="inline-flex min-h-11 items-center justify-center gap-2 rounded-[6px] bg-accent px-6 py-3 text-sm font-medium tracking-wide text-accent-foreground transition-all duration-300 hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+              >
+                <span className="md:hidden">Reservar agora</span>
+                <span className="hidden md:inline">Consultar disponibilidade</span>
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
               <Link
                 to="/quartos"
                 className="inline-flex min-h-11 items-center justify-center gap-2 text-sm text-foreground underline decoration-accent/40 underline-offset-8 transition-colors hover:text-accent hover:decoration-accent focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
               >
-                Conhecer nossos quartos
-                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                <span className="md:hidden">Ver acomodações</span>
+                <span className="hidden md:inline">Conhecer nossos quartos</span>
               </Link>
             </div>
-            <ul className="hotel-hero-features hidden md:grid" aria-label="Comodidades em destaque">
+            <ul className="hotel-hero-features grid" aria-label="Comodidades em destaque">
               <li>
                 <Coffee className="h-4 w-4" aria-hidden="true" /> Café da manhã
               </li>
@@ -116,21 +138,11 @@ function Home() {
               </li>
             </ul>
           </div>
-          <div className="hotel-hero-photo">
-            <img
-              src={PHOTOS.hero.src}
-              alt={PHOTOS.hero.alt}
-              width={PHOTOS.hero.w}
-              height={PHOTOS.hero.h}
-              fetchPriority="high"
-              decoding="async"
-            />
-          </div>
         </div>
       </section>
 
       {/* Apresentação */}
-      <section className="border-t border-border bg-surface py-24 md:py-32">
+      <section className="reference-page border-t border-border bg-surface py-24 md:py-32">
         <div className="container-site grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
           <Reveal>
             <p className="eyebrow">Hospitalidade</p>
@@ -162,7 +174,7 @@ function Home() {
       </section>
 
       {/* Diferenciais */}
-      <section className="py-24 md:py-32">
+      <section className="reference-page py-24 md:py-32">
         <div className="container-site">
           <Reveal className="max-w-2xl">
             <p className="eyebrow">Comodidades</p>
@@ -171,16 +183,14 @@ function Home() {
               Uma estrutura preparada para tornar sua experiência ainda mais agradável.
             </p>
           </Reveal>
-          <ul className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="mt-16 grid gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
             {FEATURES.map((f, i) => (
-              <li key={f.title} className="amenity-card">
+              <li key={f.title} className="bg-background">
                 <Reveal
                   delay={i * 60}
-                  className="h-full p-8 transition-colors duration-300 hover:bg-secondary/30"
+                  className="h-full p-8 transition-colors duration-300 hover:bg-surface"
                 >
-                  <span className="inline-flex rounded-xl bg-secondary/50 p-3">
-                    <f.icon className="h-7 w-7 text-accent" strokeWidth={1.4} aria-hidden="true" />
-                  </span>
+                  <f.icon className="h-7 w-7 text-accent" strokeWidth={1.4} aria-hidden="true" />
                   <h3 className="mt-6 text-xl">{f.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{f.text}</p>
                 </Reveal>
@@ -191,7 +201,7 @@ function Home() {
       </section>
 
       {/* Acomodações em destaque */}
-      <section className="bg-surface py-24 md:py-32">
+      <section className="reference-page bg-surface py-24 md:py-32">
         <div className="container-site">
           <Reveal className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <div className="max-w-2xl">
@@ -209,7 +219,7 @@ function Home() {
           <div className="mt-14 grid gap-8 md:grid-cols-3">
             {FEATURED.map((c, i) => (
               <Reveal key={c.title} delay={i * 120}>
-                <article className="group bg-transparent">
+                <article className="group">
                   <div className="overflow-hidden rounded-lg">
                     <img
                       src={c.photo.src}
@@ -221,9 +231,7 @@ function Home() {
                     />
                   </div>
                   <h3 className="mt-5 text-2xl">{c.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                    {c.text}
-                  </p>
+                  <p className="mt-1 text-sm text-muted-foreground">{c.text}</p>
                 </article>
               </Reveal>
             ))}
@@ -232,7 +240,7 @@ function Home() {
       </section>
 
       {/* Experiência */}
-      <section className="py-24 md:py-32">
+      <section className="reference-page py-24 md:py-32">
         <div className="container-site grid items-center gap-10 lg:grid-cols-12">
           <Reveal className="lg:col-span-7">
             <img
@@ -260,7 +268,7 @@ function Home() {
       </section>
 
       {/* Localização */}
-      <section className="border-t border-border bg-surface py-24">
+      <section className="reference-page border-t border-border bg-surface py-24">
         <Reveal className="container-site grid gap-8 md:grid-cols-[1fr_auto] md:items-center">
           <div className="max-w-2xl">
             <p className="eyebrow">Localização</p>
@@ -283,6 +291,7 @@ function Home() {
       </section>
 
       <CtaSection
+        referenceStyle
         title="Sua próxima estadia começa aqui."
         text="Entre em contato com nossa equipe e consulte a disponibilidade de acomodações."
       />
