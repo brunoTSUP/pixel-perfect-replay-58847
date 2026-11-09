@@ -74,7 +74,7 @@ const FEATURED = [
     text: "Comodidades que tornam sua estadia mais agradável.",
   },
   {
-    photo: PHOTOS.quartoBanheiro,
+    photo: PHOTOS.quartoBranco,
     title: "Atenção aos detalhes",
     text: "Ambientes planejados para receber você.",
   },
