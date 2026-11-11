@@ -22,7 +22,7 @@ export function CtaSection({
           : "site-cta text-graphite-foreground"
       }
     >
-      <Reveal className="container-site py-24 text-center md:py-32">
+      <Reveal className="container-site py-6 text-center md:py-32">
         <h2 className="mx-auto max-w-2xl text-4xl leading-tight md:text-5xl">{title}</h2>
         <p className="mx-auto mt-5 max-w-xl opacity-75">{text}</p>
         <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">

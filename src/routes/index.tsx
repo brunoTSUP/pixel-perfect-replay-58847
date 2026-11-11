@@ -131,7 +131,7 @@ function Home() {
       </section>
 
       {/* Apresentação */}
-      <section className="reference-page border-t border-border bg-surface py-24 md:py-32">
+      <section className="reference-page border-t border-border bg-surface py-6">
         <div className="container-site grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
           <Reveal>
             <p className="eyebrow">Hospitalidade</p>
@@ -156,14 +156,14 @@ function Home() {
               width={PHOTOS.quartoCasalSolteiro.w}
               height={PHOTOS.quartoCasalSolteiro.h}
               loading="lazy"
-              className="aspect-[4/5] w-full rounded-lg object-cover shadow-soft"
+              className="aspect-[5/5] w-full rounded-lg object-cover shadow-soft"
             />
           </Reveal>
         </div>
       </section>
 
       {/* Diferenciais */}
-      <section className="reference-page py-24 md:py-32">
+      <section className="reference-page py-6">
         <div className="container-site">
           <Reveal className="max-w-2xl">
             <p className="eyebrow">Comodidades</p>
@@ -190,7 +190,7 @@ function Home() {
       </section>
 
       {/* Acomodações em destaque */}
-      <section className="reference-page bg-surface py-24 md:py-32">
+      <section className="reference-page bg-surface py-6">
         <div className="container-site">
           <Reveal className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <div className="max-w-2xl">
@@ -229,7 +229,7 @@ function Home() {
       </section>
 
       {/* Experiência */}
-      <section className="reference-page py-24 md:py-32">
+      <section className="reference-page py-6">
         <div className="container-site grid items-center gap-10 lg:grid-cols-12">
           <Reveal className="lg:col-span-7">
             <img
@@ -243,7 +243,7 @@ function Home() {
           </Reveal>
           <Reveal delay={150} className="lg:col-span-5 lg:-ml-24">
             <div className="rounded-lg bg-surface p-8 shadow-soft md:p-12">
-              <span className="block h-px w-12 bg-accent" />
+              <span className="block h-px w-12" />
               <h2 className="mt-6 text-3xl leading-tight md:text-4xl">
                 Uma estadia com conforto e praticidade
               </h2>
@@ -257,7 +257,7 @@ function Home() {
       </section>
 
       {/* Localização */}
-      <section className="reference-page border-t border-border bg-surface py-24">
+      <section className="reference-page border-t border-border bg-surface py-6">
         <Reveal className="container-site grid gap-8 md:grid-cols-[1fr_auto] md:items-center">
           <div className="max-w-2xl">
             <p className="eyebrow">Localização</p>

@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, Loader2, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { ArrowRight, Instagram, Loader2, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { referenceBtn as btn } from "@/components/ui/btn";
 import { Reveal } from "@/components/layout/Reveal";
@@ -31,6 +31,7 @@ const CONTACTS = [
   { icon: MessageCircle, label: "WhatsApp", value: HOTEL.whatsappDisplay, href: HOTEL.whatsappHref, ext: true },
   { icon: Phone, label: "Telefone", value: HOTEL.phoneDisplay, href: HOTEL.phoneHref },
   { icon: Mail, label: "E-mail", value: HOTEL.email, href: `mailto:${HOTEL.email}` },
+  { icon: Instagram, label: "Instagram", value: HOTEL.instagram, href: HOTEL.instagramHref, ext: true },
 ];
 
 function Contato() {
@@ -46,7 +47,7 @@ function Contato() {
         </div>
       </section>
 
-      <section className="py-20">
+      <section className="py-6">
         <div className="container-site grid gap-14 lg:grid-cols-[1fr_1.4fr]">
           <Reveal className="min-w-0">
             <ul className="divide-y divide-border">
@@ -243,7 +244,7 @@ function MapSection() {
     return () => io.disconnect();
   }, []);
   return (
-    <section className="bg-surface py-20">
+    <section className="bg-surface py-6">
       <div className="container-site">
         <div className="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <div>

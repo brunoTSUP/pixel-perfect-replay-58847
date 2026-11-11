@@ -7,6 +7,8 @@ export const HOTEL = {
   phoneDisplay: "(17) 3546-1608",
   phoneHref: "tel:+551735461608",
   email: "recepcao@hotelmoreno.com.br",
+  instagram: "@hotel_moreno.itajobi",
+  instagramHref: "https://www.instagram.com/hotel_moreno.itajobi/",
   whatsappHref: "https://wa.me/5517997151608",
   whatsappMessageHref:
     "https://wa.me/5517997151608?text=Ol%C3%A1%21%20Gostaria%20de%20consultar%20a%20disponibilidade%20de%20quartos%20no%20Hotel%20Moreno.",
@@ -31,9 +33,14 @@ export const PHOTOS = {
     w: 1024,
     h: 1536,
   },
-  fachada: { src: "/images/fachada.jpeg", alt: "Fachada moderna do Hotel Moreno em Itajobi", w: 375, h: 625 },
+  fachada: {
+    src: "/images/fachada.jpeg",
+    alt: "Fachada moderna do Hotel Moreno em Itajobi",
+    w: 375,
+    h: 625,
+  },
   quartoCasalSolteiro: {
-    src: "/images/quarto-casal-solteiro.jpeg",
+    src: "/images/quarto-casal-solteiro.png",
     alt: "Quarto com cama de casal e cama de solteiro, manta vermelha e painel amadeirado",
     w: 1600,
     h: 1200,
@@ -63,7 +70,7 @@ export const PHOTOS = {
     h: 1448,
   },
   quartoBanheiro: {
-    src: "/images/quarto-banheiro.jpeg",
+    src: "/images/quarto-banheiro.png",
     alt: "Quarto com acesso ao banheiro e revestimentos em marrom",
     w: 1086,
     h: 1448,
@@ -80,6 +87,18 @@ export const PHOTOS = {
     w: 1600,
     h: 1200,
   },
+  quartoQuadroPequeno: {
+    src: "/images/quarto-quadro-pequeno.jpeg",
+    alt: "Quarto com quadro pequeno na parede",
+    w: 900,
+    h: 1600,
+  },
+  quartoCompleto: {
+    src: "/images/quarto-completo.jpeg",
+    alt: "Quarto com to dos os itens essenciais",
+    w: 1200,
+    h: 1600,
+  },
 } satisfies Record<string, Photo>;
 
 export const GALLERY: Photo[] = [
@@ -90,4 +109,6 @@ export const GALLERY: Photo[] = [
   PHOTOS.quartoBanheiro,
   PHOTOS.pia,
   PHOTOS.varanda,
+  PHOTOS.quartoQuadroPequeno,
+  PHOTOS.quartoCompleto,
 ];

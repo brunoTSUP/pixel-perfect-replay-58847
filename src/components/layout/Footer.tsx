@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { Instagram, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { HOTEL } from "@/lib/site";
 
 export function Footer() {
@@ -42,6 +42,12 @@ export function Footer() {
             <li className="flex gap-3">
               <Mail className="mt-0.5 h-4 w-4 shrink-0" />
               <a href={`mailto:${HOTEL.email}`} className="break-all">{HOTEL.email}</a>
+            </li>
+            <li className="flex gap-3">
+              <Instagram className="mt-0.5 h-4 w-4 shrink-0" />
+              <a href={HOTEL.instagramHref} target="_blank" rel="noopener noreferrer">
+                Instagram: {HOTEL.instagram}
+              </a>
             </li>
           </ul>
         </div>

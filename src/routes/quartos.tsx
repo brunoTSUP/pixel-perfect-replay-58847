@@ -53,7 +53,7 @@ function Quartos() {
         </div>
       </section>
 
-      <section className="bg-surface py-24">
+      <section className="bg-surface py-6">
         <Reveal className="container-site grid gap-8 lg:grid-cols-2 lg:gap-20">
           <h2 className="text-4xl md:text-5xl">Conforto para sua estadia</h2>
           <div className="space-y-4 leading-relaxed text-muted-foreground">
@@ -69,7 +69,7 @@ function Quartos() {
         </Reveal>
       </section>
 
-      <section className="py-24" aria-labelledby="galeria">
+      <section className="py-6" aria-labelledby="galeria">
         <div className="container-site">
           <Reveal>
             <p className="eyebrow">Galeria</p>
@@ -79,7 +79,7 @@ function Quartos() {
         </div>
       </section>
 
-      <section className="bg-surface py-24">
+      <section className="bg-surface py-6">
         <div className="container-site">
           <Reveal>
             <h2 className="text-4xl md:text-5xl">Tudo para uma estadia confortável</h2>

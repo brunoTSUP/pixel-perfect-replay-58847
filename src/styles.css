@@ -166,7 +166,7 @@
   width: 100%;
   position: relative;
   overflow: hidden;
-  border-radius: 24px;
+  border-radius: 0.5rem;
   background: var(--secondary);
 }
 
@@ -266,7 +266,7 @@
     grid-row: 1;
     max-width: none;
     justify-self: stretch;
-    border-radius: 28px;
+    border-radius: 0.5rem;
   }
 
   .hotel-hero-content {
@@ -309,7 +309,7 @@
     width: 100%;
     aspect-ratio: 1;
     justify-self: center;
-    border-radius: 18px;
+    border-radius: 0.5rem;
   }
 
   .hotel-hero-photo img {
@@ -347,6 +347,20 @@
     justify-content: center;
   }
 
+}
+
+@media (width > 768px) {
+  #conteudo .text-muted-foreground {
+    font-size: calc(var(--text-base) * 1.25);
+  }
+
+  #conteudo .text-muted-foreground.text-sm {
+    font-size: calc(var(--text-sm) * 1.25);
+  }
+
+  #conteudo .text-muted-foreground.text-xs {
+    font-size: calc(var(--text-xs) * 1.25);
+  }
 }
 
 @utility reveal {
