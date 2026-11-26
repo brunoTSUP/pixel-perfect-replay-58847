@@ -1,24 +1,34 @@
 # Hotel Moreno
 
-Landing page institucional em React 19, TypeScript, Vite e Tailwind CSS.
-O site é uma SPA executada no navegador: o build contém somente HTML, CSS,
-JavaScript e imagens, sem TanStack Start, SSR, Workers ou servidor Node em produção.
+Landing page institucional do Hotel Moreno, desenvolvida com React,
+TypeScript, Vite e Tailwind CSS.
 
-This project was built with [Lovable](https://lovable.dev).
+O projeto utiliza uma arquitetura SPA (Single Page Application),
+executada inteiramente no navegador. O build gera arquivos estáticos
+HTML, CSS, JavaScript e imagens, sem necessidade de um servidor Node.js,
+SSR ou Workers em produção.
 
-**Live app**: https://pixel-perfect-replay-58847.lovable.app
+**Website:** https://hotel-moreno.pages.dev/
 
-## Build with Lovable
+## Tecnologias
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/3dcf7581-9ea6-4e01-9c5c-3c49f9bcb88e).
+- React 19
+- TypeScript
+- Vite
+- Tailwind CSS
+- Node.js
+- npm
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+## Requisitos
 
-## Development
+- Node.js 22.14+ (ou 24+)
+- npm
 
-Use Node.js 22.14+ (ou 24+) e npm. A versão recomendada está em `.nvmrc`.
+A versão recomendada do Node.js está definida no arquivo `.nvmrc`.
+
+## Desenvolvimento
+
+Para configurar e executar o projeto localmente:
 
 ```sh
 nvm use
@@ -26,37 +36,69 @@ npm ci
 npm run dev
 ```
 
-## Build e publicação estática
+## Build e publicação
+
+Para gerar e visualizar o build de produção localmente:
 
 ```sh
 npm run build
 npm run preview
 ```
 
-Publique o conteúdo de `dist/` na raiz do domínio. Não publique `.output/`,
-que pertence ao build antigo. `preview` serve somente para conferir o build localmente.
-O build gera `index.html`, `quartos/index.html`, `contato/index.html`,
-`privacidade/index.html` e `404.html`; as páginas conhecidas podem ser abertas ou
-recarregadas diretamente em hospedagens que servem `index.html` de cada diretório.
+O conteúdo gerado no diretório `dist/` deve ser publicado na raiz
+do domínio.
+
+O comando `preview` destina-se exclusivamente à validação local
+do build de produção.
+
+### Rotas
+
+O build gera os seguintes arquivos:
+
+- `index.html`
+- `quartos/index.html`
+- `contato/index.html`
+- `privacidade/index.html`
+- `404.html`
+
+As páginas conhecidas podem ser acessadas ou recarregadas diretamente
+em hospedagens que servem o arquivo `index.html` de cada diretório.
+
 Para URLs desconhecidas, configure a hospedagem para servir `404.html`.
 
-O HTML é a entrada da SPA, não uma pré-renderização do conteúdo. React renderiza
-as páginas e atualiza seus títulos e metadados no navegador. O layout, as fontes,
-as fotos e os estilos existentes são preservados.
+### Renderização
 
-## Contato
+Os arquivos HTML funcionam como pontos de entrada da SPA, não como
+páginas pré-renderizadas.
 
-Defina `VITE_CONTACT_API_URL` antes de executar o build para usar a API Rails externa:
+O React é responsável pela renderização das páginas e pela atualização
+dos títulos e metadados no navegador.
+
+## Integração com a API de contato
+
+O formulário de contato utiliza uma API externa desenvolvida em Ruby
+on Rails.
+
+Para configurar a integração, defina a variável de ambiente
+`VITE_CONTACT_API_URL` antes de executar o build:
 
 ```sh
 VITE_CONTACT_API_URL=https://api.hotelmoreno.com.br npm run build
 ```
 
-O formulário envia `POST /api/contact` nessa API, que precisa permitir a origem
-do site via CORS. Sem essa variável, permanece o aviso com alternativa pelo WhatsApp.
-Variáveis `VITE_*` são públicas; não inclua segredos nelas.
+O formulário envia uma requisição `POST /api/contact` para a API,
+que deve permitir a origem do site por meio da configuração de CORS.
+
+Caso a variável não seja configurada, o formulário apresenta um aviso
+com a alternativa de contato pelo WhatsApp.
+
+**Segurança:** variáveis de ambiente com o prefixo `VITE_` são públicas.
+Não utilize essas variáveis para armazenar credenciais, tokens ou
+outras informações sensíveis.
 
 ## Validação
+
+Antes de integrar alterações ou publicar uma nova versão, execute:
 
 ```sh
 npm run typecheck
@@ -64,4 +106,8 @@ npm test
 npm run build
 ```
 
-Use npm e mantenha `package-lock.json` como lockfile do projeto.
+## Gerenciamento de dependências
+
+Utilize npm como gerenciador de pacotes e mantenha o arquivo
+`package-lock.json` versionado no repositório para garantir a
+consistência das instalações entre ambientes.
